@@ -1,0 +1,25 @@
+.ant-upload-disabled .ant-btn {
+    cursor: not-allowed !important;
+    border-color: #d9d9d9 !important;
+    color: rgba(0, 0, 0, 0.25) !important;
+    background: rgba(0, 0, 0, 0.04) !important;
+    box-shadow: none !important;
+    pointer-events: none !important; 
+    &:hover {
+        cursor: not-allowed !important;
+        border-color: #d9d9d9 !important; 
+        color: rgba(0, 0, 0, 0.25) !important; 
+        background: rgba(0, 0, 0, 0.04) !important; 
+        box-shadow: none !important; 
+    }
+    &:focus {
+        outline: none !important; 
+        box-shadow: none !important; 
+    }
+    &:active {
+        border-color: #d9d9d9 !important; 
+        background: rgba(0, 0, 0, 0.04) !important; 
+        color: rgba(0, 0, 0, 0.25) !important; 
+        box-shadow: none !important; 
+    }
+}

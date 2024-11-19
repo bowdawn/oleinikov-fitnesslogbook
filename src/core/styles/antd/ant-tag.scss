@@ -1,0 +1,38 @@
+.custom-sort .ant-tag.ant-tag-checkable {
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: 6px !important;
+}
+.custom-sort .ant-tag.ant-tag-checkable:not(.ant-tag-checkable-checked) {
+    border-color: #d9d9d9;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+}
+.custom-sort .ant-tag.ant-tag-checkable:not(.ant-tag-checkable-checked):hover {
+    background-color: white !important;
+    border-color: #1677ff !important;
+}
+@media (max-width: 1200px) {
+    .custom-sort .ant-tag.ant-tag-checkable {
+        font-size: 18px;
+        line-height: 36px;
+    }
+}
+@media (max-width: 992px) {
+    .custom-sort .ant-tag.ant-tag-checkable {
+        font-size: 16px;
+        line-height: 32px;
+    }
+}
+@media (max-width: 768px) {
+    .custom-sort .ant-tag.ant-tag-checkable {
+        font-size: 14px;
+        line-height: 28px;
+    }
+}
+@media (max-width: 576px) {
+    .custom-sort .ant-tag.ant-tag-checkable {
+        font-size: 12px;
+        line-height: 24px;
+        margin-top: 8px !important;
+    }
+}

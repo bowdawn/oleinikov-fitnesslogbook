@@ -1,0 +1,55 @@
+.ant-layout-header {
+    padding: 0 50px;
+}
+
+.ant-layout-content {
+    padding: 48px;
+}
+
+/* For screens smaller than 1200px (lg) */
+@media (max-width: 1200px) {
+    .ant-layout-header {
+        padding: 0 40px;
+    }
+
+    .ant-layout-content {
+        padding: 36px;
+    }
+}
+
+/* For screens smaller than 992px (md) */
+@media (max-width: 992px) {
+    .ant-layout-header {
+        padding: 0 30px;
+    }
+
+    .ant-layout-content {
+        padding: 24px;
+    }
+}
+
+/* For screens smaller than 768px (sm) */
+@media (max-width: 768px) {
+    .ant-layout-header {
+        padding: 0 20px;
+    }
+
+    .ant-layout-content {
+        padding: 16px;
+    }
+}
+
+/* For screens smaller than 576px (xs) */
+@media (max-width: 576px) {
+    .ant-layout-header {
+        padding: 0 10px;
+    }
+
+    .ant-layout-content {
+        padding: 8px;
+    }
+}
+
+.ant-layout-sider {
+    z-index: 1001
+}

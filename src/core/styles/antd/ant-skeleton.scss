@@ -1,0 +1,16 @@
+.ant-skeleton-centered {
+    .ant-skeleton-content {
+        display: flex;
+        justify-content: center;
+    }
+}
+.ant-skeleton {
+    width: 100% !important;
+    height: 100%;
+    .ant-skeleton-image {
+        min-height: 96px;
+        width: 100% !important;
+        height: 100% !important;
+
+    }
+}

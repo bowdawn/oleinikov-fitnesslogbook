@@ -1,0 +1,23 @@
+.ant-card .ant-card-body {
+    padding: 24px;
+}
+@media (max-width: 1200px) {
+    .ant-card .ant-card-body {
+        padding: 20px;
+    }
+}
+@media (max-width: 992px) {
+    .ant-card .ant-card-body {
+        padding: 16px;
+    }
+}
+@media (max-width: 768px) {
+    .ant-card .ant-card-body {
+        padding: 12px;
+    }
+}
+@media (max-width: 576px) {
+    .ant-card .ant-card-body {
+        padding: 8px;
+    }
+}

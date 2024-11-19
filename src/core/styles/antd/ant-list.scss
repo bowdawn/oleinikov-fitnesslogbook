@@ -1,0 +1,17 @@
+.ant-list.ant-list-dynamic-height {
+    & .ant-spin-container {
+        & .ant-row {
+            & div {
+                & .ant-col {
+                    display: flex;
+                    height: 100%;
+                    & .ant-list-item {
+                        & .ant-card {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

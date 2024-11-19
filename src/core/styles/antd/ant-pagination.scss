@@ -1,0 +1,29 @@
+
+.show-total {
+    margin: 0px !important;
+    display: flex;
+    justify-content: center;
+       & >  :not(.ant-pagination-total-text) {
+       display: none; /* Ensure the total text is on its own line */
+   }}
+   .show-options{
+       margin: 0px !important;
+       display: flex;
+       justify-content: center;
+          & >  :not(.ant-pagination-options){
+       display: none; /* Ensure the total text is on its own line */
+   }
+   & > .ant-pagination-options {
+       display: inline-block !important;
+   }
+   }
+   .show-pagination{
+      
+          & >  .ant-pagination-options{
+       display: none; /* Ensure the total text is on its own line */
+   }
+   & > .ant-pagination-total-text{
+       display: none; /* Ensure the total text is on its own line */
+   }
+   }
+   

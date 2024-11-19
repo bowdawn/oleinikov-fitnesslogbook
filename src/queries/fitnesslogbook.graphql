@@ -1,0 +1,116 @@
+query GetWorkouts($limit: Int, $offset: Int) {
+  allWorkouts(limit: $limit, offset: $offset) {
+    totalCount
+    hasNextPage
+    hasPreviousPage
+    groupedItems {
+      date 
+      workouts {
+        user {
+          id
+          username
+          email
+        }
+        id
+        date
+        duration
+        sport {
+          name
+        }
+        location {
+          name
+        }
+        workoutCategory {
+          name
+        }
+        details {
+          id
+          exercise {
+            name
+          }
+          reps
+          order
+          calories
+          distance
+          weight
+          duration
+        }
+      }
+    }
+  }
+}
+
+
+query GetWorkout($id: Int!) {
+  workout(id: $id) {
+    id
+    date
+    duration
+    user {
+      id
+      username
+      email
+    }
+    sport {
+      name
+    }
+    location {
+      name
+    }
+    workoutCategory {
+      name
+    }
+    details {
+      id
+      reps
+      order
+      calories
+      distance
+      weight
+      duration
+      exercise {
+        name
+      }
+    }
+  }
+}
+
+query GetLocations {
+  allLocations {
+    id
+    name
+  }
+}
+
+query GetExercises {
+  allExercises {
+    id
+    name
+  }
+}
+
+query GetSports {
+  allSports {
+    id
+    name
+  }
+}
+
+query GetWorkoutCategories {
+  allWorkoutCategories {
+    id
+    name
+  }
+}
+
+query GetCrossfitCount {
+  crossfitAttendanceCount
+  crossfitAttendanceLastWeekCount
+  crossfitAttendanceTotalCount
+}
+
+query GetSwimmingCount {
+  swimmingAttendanceCount
+  swimmingAttendanceLastWeekCount
+  swimmingAttendanceTotalCount
+}

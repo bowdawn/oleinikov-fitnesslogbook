@@ -1,0 +1,106 @@
+mutation CreateWorkout(
+  $date: Date!,
+  $sportName: String!,
+  $workoutCategoryName: String!,
+  $locationName: String!,
+  $duration: Int,
+  $workoutDetailsInput: [CreateWorkoutDetailInputType]
+) {
+  createWorkout(
+    date: $date,
+    sportName: $sportName,
+    workoutCategoryName: $workoutCategoryName,
+    locationName: $locationName,
+    duration: $duration,
+    workoutDetailsInput: $workoutDetailsInput
+  ) {
+    workout {
+      id
+      date
+      duration
+      sport {
+        name
+      }
+      workoutCategory {
+        name
+      }
+      location {
+        name
+      }
+    }
+    workoutDetails {
+      exercise {
+        name
+      }
+      reps
+      weight
+      calories
+      distance
+      duration
+      order
+    }
+  }
+}
+mutation UpdateWorkout(
+  $workoutId: ID!
+  $date: Date!
+  $sportName: String!
+  $locationName: String!
+  $workoutCategoryName: String!
+  $duration: Int,
+  $workoutDetailsInput: [UpdateWorkoutDetailInputType]
+) {
+  updateWorkout(
+    workoutId: $workoutId,
+    date: $date,
+    sportName: $sportName,
+    locationName:$locationName,
+    duration: $duration,
+    workoutCategoryName: $workoutCategoryName,
+    workoutDetailsInput: $workoutDetailsInput
+  ) {
+    workout {
+      id
+      date
+      sport {
+        name
+      }
+      workoutCategory {
+        name
+      }
+       details{
+        id
+        exercise {
+          name
+        }
+        reps
+        weight
+        calories
+        distance
+        duration
+        order
+      }
+    }
+  }
+}
+
+mutation Login($username: String!, $password: String!) {
+  login(username: $username, password: $password) {
+    user {
+      username
+      email
+    }
+    token
+  }
+}
+
+mutation VerifyToken {
+  verifyToken {
+    isValid
+    user {
+      id
+      username
+      email
+    }
+  }
+}
