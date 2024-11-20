@@ -1,8 +1,12 @@
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
+
+
+const isLocalServer = process.env["REACT_APP_LOCAL_SERVER"] === 'true'
+const BASE_URL = isLocalServer ? "http://localhost:8000/graphql/" : "https://oleinikovfitnesslogbookbackend.vercel.app/graphql/";
 const httpLink = createHttpLink({
-  uri: "http://localhost:8000/graphql/", // Your Django GraphQL endpoint
+  uri: BASE_URL, 
 });
 
 // Set up authentication with token
