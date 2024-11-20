@@ -114,3 +114,10 @@ query GetSwimmingCount {
   swimmingAttendanceLastWeekCount
   swimmingAttendanceTotalCount
 }
+
+query GetMaxWeightPerReps($exerciseName: String!) {
+  maxWeightPerReps(exerciseName: $exerciseName) {
+    reps
+    maxWeight
+  }
+}

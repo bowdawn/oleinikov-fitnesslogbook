@@ -6,6 +6,7 @@ import LogbookPage from "../pages/LogbookPage";
 import ViewWorkoutPage from "../pages/ViewWorkoutPage";
 import UpdateWorkoutPage from "../pages/UpdateWorkoutPage";
 import CreateWorkoutPage from "../pages/CreateWorkoutPage";
+import ExercisePage from "../pages/ExercisePage";
 
 
 export const logbookPath = "/logbook"
@@ -15,6 +16,7 @@ export const viewWorkoutPath = viewWorkoutPathPrefix + ":id";
 export const updateWorkoutPathPrefix = "/update-workout/";
 export const updateWorkoutPath = updateWorkoutPathPrefix + ":id";
 export const createWorkoutPath = "/create-workout";
+export const exercisePath = "/exercise";
 
 
 const router = () => {
@@ -45,6 +47,10 @@ const router = () => {
         {
           path: createWorkoutPath,
           element: <CreateWorkoutPage />,
+        },
+        {
+          path: exercisePath,
+          element: <ExercisePage />,
         },
         { path: "*", element: <NotFoundPage /> },
       ],

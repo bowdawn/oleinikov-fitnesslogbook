@@ -82,6 +82,12 @@ export type Login = {
   user?: Maybe<UserType>;
 };
 
+export type MaxWeightPerReps = {
+  __typename?: 'MaxWeightPerReps';
+  maxWeight?: Maybe<Scalars['Float']['output']>;
+  reps?: Maybe<Scalars['Int']['output']>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   createExercise?: Maybe<CreateExercise>;
@@ -163,6 +169,7 @@ export type Query = {
   crossfitAttendanceTotalCount?: Maybe<Scalars['Int']['output']>;
   exercise?: Maybe<ExerciseType>;
   location?: Maybe<LocationType>;
+  maxWeightPerReps?: Maybe<Array<Maybe<MaxWeightPerReps>>>;
   sport?: Maybe<SportType>;
   swimmingAttendanceCount?: Maybe<Scalars['Int']['output']>;
   swimmingAttendanceLastWeekCount?: Maybe<Scalars['Int']['output']>;
@@ -187,6 +194,11 @@ export type QueryExerciseArgs = {
 
 export type QueryLocationArgs = {
   id: Scalars['Int']['input'];
+};
+
+
+export type QueryMaxWeightPerRepsArgs = {
+  exerciseName: Scalars['String']['input'];
 };
 
 
@@ -376,6 +388,13 @@ export type GetSwimmingCountQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetSwimmingCountQuery = { __typename?: 'Query', swimmingAttendanceCount?: number | null, swimmingAttendanceLastWeekCount?: number | null, swimmingAttendanceTotalCount?: number | null };
+
+export type GetMaxWeightPerRepsQueryVariables = Exact<{
+  exerciseName: Scalars['String']['input'];
+}>;
+
+
+export type GetMaxWeightPerRepsQuery = { __typename?: 'Query', maxWeightPerReps?: Array<{ __typename?: 'MaxWeightPerReps', reps?: number | null, maxWeight?: number | null } | null> | null };
 
 
 export const CreateWorkoutDocument = gql`
@@ -759,3 +778,27 @@ export type GetSwimmingCountQueryHookResult = ReturnType<typeof useGetSwimmingCo
 export type GetSwimmingCountLazyQueryHookResult = ReturnType<typeof useGetSwimmingCountLazyQuery>;
 export type GetSwimmingCountSuspenseQueryHookResult = ReturnType<typeof useGetSwimmingCountSuspenseQuery>;
 export type GetSwimmingCountQueryResult = Apollo.QueryResult<GetSwimmingCountQuery, GetSwimmingCountQueryVariables>;
+export const GetMaxWeightPerRepsDocument = gql`
+    query GetMaxWeightPerReps($exerciseName: String!) {
+  maxWeightPerReps(exerciseName: $exerciseName) {
+    reps
+    maxWeight
+  }
+}
+    `;
+export function useGetMaxWeightPerRepsQuery(baseOptions: Apollo.QueryHookOptions<GetMaxWeightPerRepsQuery, GetMaxWeightPerRepsQueryVariables> & ({ variables: GetMaxWeightPerRepsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetMaxWeightPerRepsQuery, GetMaxWeightPerRepsQueryVariables>(GetMaxWeightPerRepsDocument, options);
+      }
+export function useGetMaxWeightPerRepsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMaxWeightPerRepsQuery, GetMaxWeightPerRepsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetMaxWeightPerRepsQuery, GetMaxWeightPerRepsQueryVariables>(GetMaxWeightPerRepsDocument, options);
+        }
+export function useGetMaxWeightPerRepsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetMaxWeightPerRepsQuery, GetMaxWeightPerRepsQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetMaxWeightPerRepsQuery, GetMaxWeightPerRepsQueryVariables>(GetMaxWeightPerRepsDocument, options);
+        }
+export type GetMaxWeightPerRepsQueryHookResult = ReturnType<typeof useGetMaxWeightPerRepsQuery>;
+export type GetMaxWeightPerRepsLazyQueryHookResult = ReturnType<typeof useGetMaxWeightPerRepsLazyQuery>;
+export type GetMaxWeightPerRepsSuspenseQueryHookResult = ReturnType<typeof useGetMaxWeightPerRepsSuspenseQuery>;
+export type GetMaxWeightPerRepsQueryResult = Apollo.QueryResult<GetMaxWeightPerRepsQuery, GetMaxWeightPerRepsQueryVariables>;

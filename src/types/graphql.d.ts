@@ -14,6 +14,7 @@ export const GetSports: DocumentNode;
 export const GetWorkoutCategories: DocumentNode;
 export const GetCrossfitCount: DocumentNode;
 export const GetSwimmingCount: DocumentNode;
+export const GetMaxWeightPerReps: DocumentNode;
 
   export default defaultDocument;
 }
