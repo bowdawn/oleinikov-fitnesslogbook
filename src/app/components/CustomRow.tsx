@@ -8,6 +8,8 @@ interface CustomRowProps
         marginTop?: number;
         inheritHeight?: boolean;
         block?: boolean;
+        preventOverflow?: boolean;
+        noWrap?: boolean; 
 }
 const CustomRow: React.FC<CustomRowProps> = ({
     style,
@@ -17,6 +19,8 @@ const CustomRow: React.FC<CustomRowProps> = ({
     marginTop = 0,
     inheritHeight = false,
     block = false,
+    preventOverflow = false,
+    noWrap = false, 
     ...props
 }) => {
     return (
@@ -29,7 +33,9 @@ const CustomRow: React.FC<CustomRowProps> = ({
                 marginTop : marginTop ? marginTop + "px" :  verticalMargin ? verticalMargin + "px" : "",
                 marginBottom : marginBottom ? marginBottom + "px" : verticalMargin ? verticalMargin + "px" : "",
                 height: inheritHeight ? "inherit": "",
-                width: block ? " 100%" : ""
+                width: block ? " 100%" : "",
+                overflow: preventOverflow ? "hidden" : "",
+                ...(noWrap && { flexWrap: "nowrap" })
             }}
         >
             {props.children}
